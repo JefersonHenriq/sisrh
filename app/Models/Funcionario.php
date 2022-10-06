@@ -11,14 +11,14 @@ class Funcionario extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class. 'id_user');
+        return $this->belongsTo(User::class, 'id_user');
     }
     public function departamento()
     {
-        return $this->belongsTo(Departamento::class. 'id_departamento');
+        return $this->belongsTo(Departamento::class, 'id_departamento');
     }
     public function cargo()
     {
-        return $this->belongsTo(Cargo::class. 'id_cargo');
+        return $this->belongsTo(Cargo::class, 'id_cargo');
     }
 }
