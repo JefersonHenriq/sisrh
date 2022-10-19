@@ -9,7 +9,7 @@
         <thead class="table-dark">
             <tr class="text-center">
                 <th>ID</th>
-                <th>Nome</th>
+                <th>Descrição</th>
                 <th>Ação</th>
             </tr>
         </thead>
