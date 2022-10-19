@@ -24,3 +24,6 @@ Route::get('/funcionarios/create', [FuncionarioController::class,'create'])->nam
 //Cargo
 Route::get('/cargos/index', [CargoController::class,'index'])->name('cargos.index');
 Route::get('/cargos/create', [CargoController::class,'create'])->name('cargos.create');
+//Departamento
+Route::get('/departamentos/index', [DepartamentoController::class,'index'])->name('departamentos.index');
+Route::get('/departamentos/create', [DepartamentoController::class,'create'])->name('departamentos.create');
