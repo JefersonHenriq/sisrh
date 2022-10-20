@@ -3,8 +3,19 @@
 @section('title', 'Funcionários')
 
 @section('conteudo')
-    <h1>Funcionário</h1>
-    <a href="{{ route('funcionarios.create') }}" class="btn btn-primary float-end mb-2 rounded-circle fs-4"><i class="bi bi-plus"></i></a>
+    <h1 class="mb-4">Funcionário</h1>
+    <a href="{{ route('funcionarios.create') }}" class="btn btn-primary position-absolute top-0 end-0 m-4 rounded-circle fs-4"><i class="bi bi-plus"></i></a>
+    <p>Total de funcionários: {{ $totalFuncionarios }}</p>
+
+    <form action="" method="get" class="mb-3 d-flex justify-content-end">
+        <div class="input-group me-3">
+            <input type="text" name="buscaFuncionario" class="form-control form-control-lg" placeholder="Nome do funcionário">
+            <button class="btn btn-primary" type="submit">Procurar</button>
+        </div>
+        <a href="{{ route('funcionarios.index') }}" class="btn btn-light border btn-lg">Limpar</a>
+     </form>
+   
+    <div class="table-responsive">
     <table class="table table-striped">
         <thead class="table-dark">
             <tr class="text-center">
@@ -29,4 +40,5 @@
             @endforeach
         </tbody>
     </table>
+    </div>
 @endsection

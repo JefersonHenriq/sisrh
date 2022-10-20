@@ -3,14 +3,26 @@
 @section('title', 'Cargos')
 
 @section('conteudo')
-    <h1>Cargos</h1>
-    <a href="{{ route('cargos.create') }}" class="btn btn-primary float-end mb-2 rounded-circle fs-4"><i class="bi bi-plus"></i></a>
+    <h1 class="mb-4">Cargos</h1>
+    <a href="{{ route('cargos.create') }}" class="btn btn-primary position-absolute top-0 end-0 m-4 rounded-circle fs-4"><i class="bi bi-plus"></i></a>
+    
+    <p>Total de cargos: {{ $totalCargos }}</p>
+
+    <form action="" method="get" class="mb-3 d-flex justify-content-end">
+        <div class="input-group me-3">
+            <input type="text" name="buscaCargo" class="form-control form-control-lg" placeholder="Descrição do cargo">
+            <button class="btn btn-primary" type="submit">Procurar</button>
+        </div>
+        <a href="" class="btn btn-light border btn-lg">Limpar</a>
+     </form>
+    
+     <div class="table-responsive">
     <table class="table table-striped">
         <thead class="table-dark">
             <tr class="text-center">
                 <th>ID</th>
                 <th>Descrição</th>
-                <th>Ação</th>
+                <th width = '190'>Ação</th>
             </tr>
         </thead>
         <tbody>
@@ -23,4 +35,5 @@
             @endforeach
         </tbody>
     </table>
+    </div>
 @endsection
