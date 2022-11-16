@@ -13,7 +13,7 @@
             <input type="text" name="buscaDepartamento" class="form-control form-control-lg" placeholder="Nome do departamento">
             <button class="btn btn-primary" type="submit">Procurar</button>
         </div>
-        <a href="" class="btn btn-light border btn-lg">Limpar</a>
+        <a href="{{ route('departamentos.index') }}" class="btn btn-light border btn-lg">Limpar</a>
      </form>
     
      <div class="table-responsive">
