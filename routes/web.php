@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\FuncionarioController;
 use App\Http\Controllers\CargoController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,10 +24,20 @@ Route::get('/', function () {
 });
 */
 //Rotas de Login
-Route::get('login', [LoginController::class, 'index'])->name('login.index');
+Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+Route::post('/auth', [LoginController::class, 'auth'])->name('login.auth');
+Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
+
+//Rotas Usuários
+Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
+Route::get('/create', [UsuarioController::class, 'create'])->name('usuarios.create');
+Route::post('/store', [UsuarioController::class, 'store'])->name('usuarios.store');
+
+//Rota DashBoard
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
 //Funcionário
-Route::get('/funcionarios/index', [FuncionarioController::class,'index'])->name('funcionarios.index');
+Route::get('/funcionarios', [FuncionarioController::class,'index'])->name('funcionarios.index');
 Route::get('/funcionarios/create', [FuncionarioController::class,'create'])->name('funcionarios.create');
 Route::post('/funcionarios', [FuncionarioController::class,'store'])->name('funcionarios.store');
 Route::get('/funcionarios/edit/{id}', [FuncionarioController::class,'edit'])->name('funcionarios.edit');
